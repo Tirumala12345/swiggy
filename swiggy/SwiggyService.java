@@ -33,6 +33,7 @@ public class SwiggyService {
         String restaurantName = "Meridian";
         String[] dishNames = {"chicken","Biryani"};
 
+        PaymentService paymentService=new PaymentService();
         LoginService loginService = new LoginService();
         boolean loginStatus = loginService.loginValidate("abc@gmail.com", "1234");
 
@@ -54,13 +55,13 @@ public class SwiggyService {
                 }
                 System.out.println("Items added to cart: " + cart.getItems.get());
                 System.out.println("Total Price: " + cart.getTotalPrice());
-                paymentService.makePayment(cart.getTotalPrice(), "CreditCard");
+                paymentService.paymentProcess(cart.getTotalPrice(), "CreditCard");
             }
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CheckedException {
         SwiggyService service=new SwiggyService();
-        service.orderProcess();
+        service. orderProcess();
     }
 }

@@ -1,6 +1,6 @@
 package swiggy;
 
-public class CreditCard {
+public class CreditCard implements Payment{
     private double balance;
 
     public CreditCard(double balance) {
@@ -11,7 +11,8 @@ public class CreditCard {
         return balance;
     }
 
-    public void makePayment(double amount) throws CheckedException {
+    @Override
+    public void paymentProcess(double amount) throws CheckedException {
         if (amount <= balance) {
             balance -= amount;
             System.out.println("Payment of Rs:" + amount + " made using Credit Card. Remaining balance: Rs" + balance);

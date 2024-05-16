@@ -1,13 +1,14 @@
 package swiggy;
 
-public class PhonePay {
+public class PhonePay implements Payment {
     private double balance;
 
     public PhonePay(double balance) {
         this.balance = balance;
     }
 
-    public void makePayment(double amount) throws CheckedException {
+    @Override
+    public void paymentProcess(double amount) throws CheckedException {
         if (amount <= balance) {
             balance -= amount;
             System.out.println("Payment of Rs:" + amount + " made using PhonePe. Remaining balance: Rs" + balance);

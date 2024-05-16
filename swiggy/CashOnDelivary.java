@@ -1,8 +1,10 @@
 package swiggy;
 
-public class CashOnDelivary {
+public class CashOnDelivary implements Payment {
 
-    public void makePayment(double amount) {
+
+    @Override
+    public void paymentProcess(double amount) {
         System.out.println("Payment of Rs:" + amount + " made using Cash.");
     }
 }

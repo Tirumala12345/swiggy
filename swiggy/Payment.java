@@ -1,5 +1,5 @@
 package swiggy;
 
 public interface Payment {
-    void paymentProcess(double amount);
+    void paymentProcess(double amount) throws CheckedException;
 }
