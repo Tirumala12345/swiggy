@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Swiggy {
-    private List<Restaurant> restaurants;
+    private List<Restaurant> restaurants = new ArrayList<>();
 
-    public Swiggy() {
-        this.restaurants = new ArrayList<>();
-    }
-
-    public List<Restaurant> getRestaurants(){
+    public List<Restaurant> getRestaurants() {
         return restaurants;
     }
 

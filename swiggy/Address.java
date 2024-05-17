@@ -1,16 +1,32 @@
 package swiggy;
 
 public class Address {
-    public String flatNo;
-    public String street;
-    public String city;
-    public String pincode;
+    private String flatNo;
+    private String street;
+    private String city;
+    private String pincode;
 
     public Address(String flatNo, String street, String city, String pincode) {
         this.flatNo = flatNo;
         this.street = street;
         this.city = city;
         this.pincode = pincode;
+    }
+
+    public String getFlatNo() {
+        return flatNo;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPincode() {
+        return pincode;
     }
 
     @Override

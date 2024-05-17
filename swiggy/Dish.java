@@ -1,21 +1,12 @@
 package swiggy;
 
 public class Dish {
-    public String dishName;
-
-    public double price;
+    private final String dishName;
+    private final double price;
 
     public Dish(String dishName, double price) {
         this.dishName = dishName;
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Dish{" +
-                "dishName='" + dishName + '\'' +
-                ", price=" + price +
-                '}';
     }
 
     public String getDishName() {
@@ -24,5 +15,13 @@ public class Dish {
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "dishName='" + dishName + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

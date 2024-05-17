@@ -1,7 +1,6 @@
 package swiggy;
 
-public class CashOnDelivary implements Payment {
-
+public class CashOnDelivery implements Payment {
 
     @Override
     public void paymentProcess(double amount) {

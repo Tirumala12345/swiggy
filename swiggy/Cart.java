@@ -6,13 +6,10 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class Cart {
-    public List<Dish> items = new ArrayList<>();
-    Consumer<Dish> addItem = (dish) -> {
-        items.add(dish);
-    };
-    Supplier<List<Dish>> getItems = () -> {
-        return items;
-    };
+    private List<Dish> items = new ArrayList<>();
+
+    public Consumer<Dish> addItem = items::add;
+    public Supplier<List<Dish>> getItems = () -> items;
 
     @Override
     public String toString() {
@@ -22,10 +19,6 @@ public class Cart {
     }
 
     public double getTotalPrice() {
-        double totalPrice = 0;
-        for (Dish item : items) {
-            totalPrice += item.price;
-        }
-        return totalPrice;
+        return items.stream().mapToDouble(Dish::getPrice).sum();
     }
 }
